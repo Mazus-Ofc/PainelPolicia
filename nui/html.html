@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,700&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./index.css">
+    <title>TABLET REMAKE</title>
+</head>
+<body>
+    <section id="container">
+        <div id="notify">
+            <div class="spacenotify"></div>
+            <div class="notify">
+                <div class="imagem">
+                    <img src="./imagens/svg/close-notify.svg" alt="">
+                </div>
+                <h1>Você antigou o limite de 200 meses</h1>
+            </div>
+        </div>
+        <div id="wrapper-prender">
+            <div class="container">
+                <h1>Descrição:</h1>
+                <textarea class="textarea"></textarea>
+                <h1>Multiplicação de multa</h1>
+                <h2>0%</h2>
+                <input type="range" class="range rangeprender" min="0" max="200" value="0">
+                <div class="meses meses-wrapper">
+                    <h1>Pena acumulada <img src="./imagens/svg/icon-meses.svg" alt=""> <span>0 Meses</span></h1>
+                </div>
+                <div class="container-fianca">
+                    <input type="checkbox" name="fianca" id="fianca" class="fiancacheckbox">
+                    <label for="fianca" class="fianca"></label>
+                    <h3>O cidadão deseja pagar a fiança de R$0?</h3>
+                </div>
+                <div class="container-meses">
+                    <h3>Meses personalizado</h3>
+                    <input type="number" name="meses" id="inputmeses" placeholder="0 Meses">
+                </div>
+            </div>
+        </div>
+
+        <div id="wrapper-multar">
+            <div class="container">
+                <h1>Descrição:</h1>
+                <textarea class="textarea textareaamultar"></textarea>
+                <h1>Multiplicação de pena</h1>
+                <h2>0%</h2>
+                <input type="range" class="range rangemultar" min="0" max="100000" value="0">
+                <div class="meses multa-wrapper">
+                    <h1>Multar acumulada <img src="./imagens/svg/icon-meses.svg" alt=""> <span>R$0</span></h1>
+                 </div>
+            </div>
+        </div>
+        <section id="background">
+            <section id="menu">
+                <div class="logo">
+                    <img src="./imagens/logo.png" alt="">
+                    <h1>Policia Militar</h1>
+                </div>
+                <div id="menus">
+                    <div class="menu pesquisar open">
+                        <img src="./imagens/svg/search.svg" alt="">
+                        <h1>Pesquisar</h1>
+                    </div>
+                    <div class="menu prender">
+                        <img src="./imagens/svg/handcuffs.svg" alt="">
+                        <h1>Prender</h1>
+                    </div>
+                    <div class="menu multar">
+                        <img src="./imagens/svg/fine.svg" alt="">
+                        <h1>Multar</h1>
+                    </div>
+                </div>
+                <img src="./imagens/svg/arrow.svg" alt="">
+            </section>
+            <section id="search">
+                <div class="title">
+                    <h1>Pesquise o passaporte para obter informações do cidadão.</h1>
+                    <h2>Esses dados são confidencias, não compartilhe com um cidadão comum.</h2>
+                </div>
+                <div class="inputs">
+                    <div class="search-input">
+                        <input type="number" placeholder="Pesquise o passaporte..." class="passporte-s">
+                        <img src="./imagens/svg/search.svg" alt="" class="pesquisa-s">
+                    </div>
+                    <div class="search-input margin">
+                        <div class="fake-input"><h2>08/02/2022 as 16:05</h2></div>
+                        <img src="./imagens/svg/data.svg" alt="">
+                    </div>
+                </div>
+                <div id="pesquisa">
+                    <div class="no-search">
+                        <div class="img-s"><img src="./imagens/svg/rede.svg" alt=""></div>
+                        <h1>Por aqui está tudo tranquilo, Pesquise para obter dados do cidadão.</h1>
+                    </div>
+
+                    <div class="close-search">
+                        <div class="img-s"><img src="./imagens/svg/close.svg" alt=""></div>
+                        <h1>Essa passaporte não existe!</h1>
+                    </div>
+                </div>
+
+                <div id="pesquisado">
+                    <div id="profile">
+                        <div class="profile">
+                        </div>
+                        <div class="profile-name">
+                        </div>
+                    </div>
+                    <section id="criminal">
+                        
+                    </section>
+                </div>
+            </section>
+
+            <section id="prender">
+                <div class="title">
+                    <h1>Efeturar prisão do passaporte. </h1>
+                    <h2>Esses dados são confidencias, não compartilhe com um cidadão comum.</h2>
+                </div>
+                <div class="inputs">
+                    <div class="search-input">
+                        <input type="number" placeholder="Digite o passaporte..." class="prender-s">
+                    </div>
+                    <div class="search-input margin">
+                        <div class="fake-input"><h2>10/02/2022 as 16:45</h2></div>
+                        <img src="./imagens/svg/data.svg" alt="">
+                    </div>
+                </div>
+                <div class="crimes">
+                    <div class="scroll-crimes">
+                    </div>
+                    <div class="buttons">
+                        <button disabled="disabled" class="buttonprender">Prender</button>
+                        <button class="opcoes">Opções de prisão <img src="./imagens/svg/arrow-opcoes.svg" alt=""></button>
+                    </div>
+                </div>
+            </section>
+
+            <section id="multar">
+                <div class="title">
+                    <h1>Efeturar multa do passaporte. </h1>
+                    <h2>Esses dados são confidencias, não compartilhe com um cidadão comum.</h2>
+                </div>
+                <div class="inputs">
+                    <div class="search-input">
+                        <input type="number" placeholder="Digite o passaporte..." class="multar-s">
+                    </div>
+                    <div class="search-input margin">
+                        <div class="fake-input"><h2>10/02/2022 as 16:45</h2></div>
+                        <img src="./imagens/svg/data.svg" alt="">
+                    </div>
+                </div>
+                <div class="crimes">
+                    <div class="scroll-multas">
+                    </div>
+                    <div class="buttons">
+                        <button disabled="disabled" class="buttonmultar">Multar</button>
+                        <button class="opcoesdemulta">Opções de multa <img src="./imagens/svg/arrow-opcoes.svg" alt=""></button>
+                    </div>
+                </div>
+            </section>
+        </section>
+    </section>
+</body>
+    <script src="./main.js"></script>
+    <script src="./menu.js"></script>
+    <script src="./pesquisar.js"></script>
+    <script src="./prender.js"></script>
+    <script src="./multar.js"></script>
+</html>
