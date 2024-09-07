@@ -1,6 +1,9 @@
 fx_version 'adamant'
 game 'gta5'
 
+author 'Mazus' 
+description 'Tablet para policia'
+
 ui_page "nui/html.html"
 
 files {

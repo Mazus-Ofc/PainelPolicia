@@ -6,8 +6,8 @@ vRP = Proxy.getInterface("vRP")
 configtablet = {}
 Proxy.addInterface("PainelPolicia", configtablet)
 
-local webhookmultar = "https://discord.com/api/webhooks/1229978544839589999/hDr_69TDlCFk7R_mO4XFZGGiwZNMfn5dvPWmLv2yjc4t8AqOVcHhfontuqVUBvVIwv3U"
-local webhookprender = "https://discord.com/api/webhooks/1204269099048374312/6vyduQDYwVGoKG_30c1kr3wOzJD5m2Gm-Ia-lpECiHosDW2UCrPEnnd6APSdhdVPD5QK"
+local webhookmultar = "LINK DO WEBHOOK"
+local webhookprender = "LINK DO WEBHOOK"
 
 function SendWebhookMessage(webhook,message)
 	if webhook ~= nil and webhook ~= "" then
