@@ -16,3 +16,6 @@ Siga os passos abaixo para configurar o projeto localmente:
 ## Contato
 
 Qualquer dúvida estou a disposição para ajudar
+
+### Versão 1.0.0.0
+
