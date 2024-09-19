@@ -19,9 +19,9 @@ Siga os passos abaixo para configurar o projeto localmente:
 Qualquer dúvida estou a disposição para ajudar
 
 ## Atualização
-### Versão 1.0.0.0
+#### Versão 1.0.0.0
 - Criação do script
 
-### Versão 1.0.0.1
+#### Versão 1.0.0.1
 - Adicionada a funcionabilidade de puxar a logo pela permissão do player, assim podendo ser usado em varias guarnições e cada uma ter sua logo individual e nome.
 
