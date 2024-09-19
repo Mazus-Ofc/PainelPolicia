@@ -13,6 +13,11 @@ $(document).ready(function () {
                 $("body").fadeOut(300);
                 break;
         };
+        if (event.data.type === "updateDetails") {
+            // Atualiza o texto e a imagem
+            document.getElementById('orgName').textContent = event.data.newText;
+            document.getElementById('orgLogo').src = event.data.logoPath;
+        }
     });
 
     document.onkeyup = function (data) {

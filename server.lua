@@ -10,6 +10,22 @@ Tunnel.bindInterface("PainelPolicia",flx)
 vCLIENT = Tunnel.getInterface('police')
 vPLAYER = Tunnel.getInterface('player')
 
+RegisterServerEvent('checkPermissionDetails')
+AddEventHandler('checkPermissionDetails', function()
+    local user_id = vRP.getUserId(source)
+    if vRP.hasPermission(user_id, "perm.pmerj") then
+        TriggerClientEvent('changeDetails', source, "Polícia Militar", "logoPmerj.png")
+    elseif vRP.hasPermission(user_id, "perm.prf") then
+        TriggerClientEvent('changeDetails', source, "P. R. F.", "logoPrf.png")
+	elseif vRP.hasPermission(user_id, "perm.pcerj") then
+        TriggerClientEvent('changeDetails', source, "Policia Civil", "logoPcerj.png")
+	elseif vRP.hasPermission(user_id, "perm.bope") then
+        TriggerClientEvent('changeDetails', source, "B. O. P. E.", "logoBope.png")
+    else
+        TriggerClientEvent('changeDetails', source, "Policia", "logo.png")
+    end
+end)
+
 function flx.GetAll(user_id)
 	local rows = vRP.query("mdtPolicia/select",{ user_id = user_id })
 	if #rows > 0 then
@@ -54,14 +70,40 @@ function flx.VerificarIdentificacao(user)
 		end
 		local img = flx.getUData(parseInt(user))
 		local fixa = vRP.query("mdtPolicia/get_fixa",{ user_id = user })
+
+		local procurado = 0
+		if identidade.fugitive == 0 then
+			procurado = 'Não'
+		elseif identidade.fugitive == 1 then
+			procurado = 'Sim'
+		end
+
+		local porte = 'Inválido'
+		if identidade.gunlicense == 0 then
+			porte = 'Não'
+		elseif identidade.gunlicense == 1 then
+			porte = 'Sim'
+		elseif identidade.gunlicense == 3 then
+			porte = 'Cassada'
+		end
+
+		local cnh = 'Inválido'
+		if identidade.driverlicense == 0 then
+			cnh = 'Não'
+		elseif identidade.driverlicense == 1 then
+			cnh = 'Sim'
+		elseif identidade.driverlicense == 3 then
+			cnh = 'Cassada'
+		end
+
 		if configtablet.tabletcreative then
 			if configtablet.creativedatabasemodificada then
-				return identidade.name,identidade.name2,identidade.phone,identidade.serial,""..math.random(18,30).."",img,fixa
+				return identidade.name,identidade.name2,identidade.phone,identidade.serial,""..math.random(18,30).."",img,fixa,procurado,porte,cnh
 			else
-				return identidade.name,identidade.name2,identidade.phone,identidade.registration,""..math.random(18,30).."",img,fixa
+				return identidade.name,identidade.name2,identidade.phone,identidade.registration,""..math.random(18,30).."",img,fixa,procurado,porte,cnh
 			end
 		else
-			return identidade.name,identidade.firstname,identidade.phone,identidade.registration,parseInt(identidade.age),img,fixa
+			return identidade.nome,identidade.sobrenome,identidade.telefone,identidade.registro,parseInt(identidade.idade),img,fixa,procurado,porte,cnh
 		end
 	end
 end
@@ -186,3 +228,5 @@ end
 function flx.GerarConfigMulta()
 	return configtablet.multamaxima
 end
+
+

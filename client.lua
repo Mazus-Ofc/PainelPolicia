@@ -7,6 +7,7 @@ vRPclient = Tunnel.getInterface("vRP")
 function Open()
     if vSERVER.checkPermission() then
 		SetNuiFocus(true,true)
+        TriggerServerEvent('checkPermissionDetails')
         local horario = vSERVER.Horario()
 		SendNUIMessage({ action = "openSystem" , horario = horario
     })
@@ -42,8 +43,8 @@ RegisterNUICallback("closeSystem",function(data)
 end)
 
 RegisterNUICallback("VerificarIdentificacao", function(data,cb)
-	local name,sobrenome,phone,identidade,idade,imagem,fixa = vSERVER.VerificarIdentificacao(data.user)
-	cb({ name = name , sobrenome = sobrenome, phone = phone, identidade = identidade, idade = idade, imagem = imagem, fixa = fixa })
+	local name,sobrenome,phone,identidade,idade,imagem,fixa,procurado,porte,cnh = vSERVER.VerificarIdentificacao(data.user)
+	cb({ name = name , sobrenome = sobrenome, phone = phone, identidade = identidade, idade = idade, imagem = imagem, fixa = fixa, procurado = procurado, porte = porte, cnh = cnh })
 end)
 
 RegisterNUICallback("GerarCrimes", function(data,cb)
@@ -151,4 +152,13 @@ RegisterNUICallback('PostNewImage', function(data, cb)
     end
     Citizen.Wait(800)
     Open()
+end)
+
+RegisterNetEvent('changeDetails')
+AddEventHandler('changeDetails', function(newText, newLogo)
+    SendNUIMessage({
+        type = "updateDetails",
+        newText = newText,
+        logoPath = "./imagens/"..newLogo
+    })
 end)
