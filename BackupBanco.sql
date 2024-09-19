@@ -25,3 +25,12 @@ CREATE TABLE `mdt_historico` (
 COLLATE='utf8mb4_general_ci'
 ENGINE=InnoDB
 ;
+CREATE TABLE `vrp_user_identities` (
+	`driverlicense` INT(1) NOT NULL DEFAULT '0',
+	`fugitive` INT(1) NOT NULL DEFAULT '0',
+	`crimerecord` INT(1) NOT NULL DEFAULT '0',
+	`gunlicense` INT(1) NOT NULL DEFAULT '0',
+)
+COLLATE='latin1_swedish_ci'
+ENGINE=InnoDB
+;
