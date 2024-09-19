@@ -20,6 +20,16 @@ vRP.prepare('mdtPolicia/createfixa', [[CREATE TABLE IF NOT EXISTS mdtPolicia_tab
 	`data` varchar(255) DEFAULT NULL
 )]])
 
+--vRP.prepare('mdtPolicia/infosextras', [[CREATE TABLE IF NOT EXISTS mdtPolicia_tablet_infosextras(
+--	`user_id` int(11) NOT NULL,
+--	`portearmas` INT(1) NOT NULL DEFAULT '0',
+--	`cnh` INT(1) NOT NULL DEFAULT '0',
+--	`fugitivo` INT(1) NOT NULL DEFAULT '0'
+--)]])
+--vRP.prepare("mdtPolicia/get_fixa","SELECT * FROM mdtPolicia_tablet_infosextras WHERE user_id = @user_id")
+--vRP.prepare("mdtPolicia/insert_fixa","INSERT INTO mdtPolicia_tablet_infosextras(user_id,portearmas,cnh,fugitivo) VALUES(@user_id,@portearmas,@cnh,@fugitivo)")
+
+
 vRP.prepare("mdtPolicia/getall","REPLACE INTO mdtPolicia_tablet_img(user_id,img)VALUES(@user_id,@img)")
 vRP.prepare("mdtPolicia/select","SELECT img FROM mdtPolicia_tablet_img WHERE user_id = @user_id")
 vRP.prepare("mdtPolicia/get_img","SELECT * FROM mdtPolicia_tablet_img WHERE user_id = @user_id")
@@ -31,6 +41,7 @@ vRP.prepare("mdtPolicia/delete_fixa","DELETE FROM mdtPolicia_tablet_fixa WHERE d
 CreateThread(function ()
 	vRP.execute('mdtPolicia/createimg')
 	vRP.execute('mdtPolicia/createfixa')
+	--vRP.execute('mdtPolicia/infosextras')
 end)
 
 if configtablet.tabletcreative then
